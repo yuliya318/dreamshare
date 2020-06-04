@@ -1,0 +1,131 @@
+
+.header{
+    @include flex-col-start;
+    position: relative;
+    width: 100%;
+    height: 700px;
+    margin-bottom: 100px;
+}
+.headerBGblack{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+.headerBG{
+    @include bgImage(100%, 100%, cover, center top);
+    background-image: url(../images/headerBG.png);
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 1;
+}
+.headerBGgradient{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, #FF4E50 0%, #F9D423 100%);
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    position: absolute;
+    z-index: 2;
+}
+.headerElements{
+    width: 940px;
+    @include flex-col-start;
+    position: absolute;
+    z-index: 3;
+    padding: 40px;
+}
+.headerTop{
+    @include flexbox (row, nowrap, space-between, baseline);
+    margin-bottom: 150px;
+    width: 100%;
+}
+.headerTop__dreamshare{
+    @include text ("Mont-Bold", 20px, 24px, $white);
+}
+.auth{
+    @include flexbox (row, nowrap, center, center);
+}
+.auth__logIn {
+    @include text ("Mont-Regular", 14px, 17px, $white);
+    margin-right: 20px;
+}
+.auth__button{
+    color: $white;
+    border: 2px solid $white;
+    width: 90px;
+    font-family: "Mont-Regular";
+}
+.headerMain{
+    @include flex-col-start;
+    text-align: center;
+}
+.headerMain__heading{
+    display: block;
+    @include text ("Mont-Bold", 52px, 63px, $white);
+    margin-bottom: 30px;
+    width: 470px;
+}
+.headerMain__text{
+    display: block;
+    @include text ("Roboto-Light", 24px, 24px, #F7F3F2);
+    margin-bottom: 30px;
+}
+.headerMain__button{
+    color: $white;
+    width: 225px;
+    background-color: $scarlet;
+    font-family: "Mont-Bold";
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+    .headerElements{
+        width: 748px;
+    }
+}
+
+
+@media screen and (max-width: 768px)  {
+    .header{
+        height: 540px;
+        margin-bottom: 35px;
+    }   
+    .headerElements{
+        width: 300px;
+        padding: 20px;
+    }
+    .headerTop{
+        @include flexbox (column, nowrap, flex-start, center);
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    .headerTop__dreamshare{
+        order: 2;
+    }
+    .auth{
+        @include flexbox (row, nowrap, space-between, center);
+        order: 1;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .headerMain__heading{
+        @include text ("Mont-Bold", 30px, 37px, $white);
+        margin-bottom: 5px;
+        width: 270px;
+    }
+    .headerMain__text{
+        @include text ("Roboto-Light", 18px, 24px, #F7F3F2);
+        margin-bottom: 15px;
+        width: 250px;
+    }
+    .headerMain__button{
+        color: $white;
+        width: 280px;
+        background-color: $scarlet;
+    }
+
+}
+    

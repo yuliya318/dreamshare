@@ -1,0 +1,32 @@
+@mixin bgImage ($w, $h, $bgS, $bgP) {
+    width: $w;
+    height: $h;
+    background-size: $bgS;
+    background-position: $bgP;
+}
+
+@mixin text ($ff, $fs, $lh, $tc) {
+    font-family: $ff;
+    font-size: $fs;
+    line-height: $lh;
+    color: $tc;
+}
+
+@mixin flexbox($d, $w, $jc, $ai) {
+    display: flex;
+    flex-flow: $d $w;
+    justify-content: $jc;
+    align-items: $ai;
+}
+@mixin flex-col-start {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+@mixin flex-col-between {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}

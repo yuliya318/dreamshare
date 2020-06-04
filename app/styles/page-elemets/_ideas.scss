@@ -1,0 +1,130 @@
+
+
+.ideas{
+    width: 100%;
+    height: 1030px;
+}
+
+.ideasPictures{
+    height: 970px;
+    width: 100%;
+    @include flex-col-between;
+}
+
+.pictureBlock{
+    @include flexbox (column, nowrap, center, center);
+    @include bgImage (300px, 310px, cover, center center);
+    border-radius: 4px;
+    position: relative;
+    z-index: 0;
+}
+.pictureBlock::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.pictureBlock__sport{
+    background-image: url(../images/sport.png);
+}
+.pictureBlock__health{
+    @include bgImage (300px, 310px, cover, right center);
+    background-image: url(../images/health.png);
+}
+.pictureBlock__extreme{
+    @include bgImage (300px, 310px, cover, right center);
+    background-image: url(../images/extreme.png);
+}
+.pictureBlock__games{
+    background-image: url(../images/games.png);
+}
+.pictureBlock__culture{
+    @include bgImage (620px, 310px, cover, center center);
+    background-image: url(../images/culture.png);
+}
+.pictureBlock__relax{
+    @include bgImage (620px, 310px, cover, center center);
+    background-image: url(../images/relax.png);
+}
+.pictureBlock__travel{
+    background-image: url(../images/travel.png);
+}
+
+.pictureBlock__heading{
+    @include text ("Mont-Bold", 22px, 27px, $white);
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+    .pictureBlock{
+        @include bgImage (236px, 310px, cover, center center);
+    }
+
+    .pictureBlock__health{
+        @include bgImage (236px, 310px, cover, right center);
+    }
+    .pictureBlock__extreme{
+        @include bgImage (236px, 310px, cover, right center);
+    }
+    .pictureBlock__culture{
+        @include bgImage (492px, 310px, cover, center center);
+    }
+    .pictureBlock__relax{
+        @include bgImage (492px, 310px, cover, center center);
+    }
+    .pictureBlock__travel{
+        @include bgImage (236px, 310px, cover, left center);
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .ideas{
+        height: 974px;
+    }
+    .ideasPictures{
+        height: 900px;
+    }
+    .pictureBlock{
+        @include bgImage (300px, 120px, cover, center center);
+        margin-top: 10px;
+    }
+    .pictureBlock__health{
+        @include bgImage (300px, 120px, cover, right center);
+    }
+    .pictureBlock__extreme{
+        @include bgImage (300px, 120px, cover, right center);
+    }
+    .pictureBlock__culture{
+        @include bgImage (300px, 120px, cover, center center);
+    }
+    .pictureBlock__relax{
+        @include bgImage (300px, 120px, cover, center center);
+    }
+    .pictureBlock__travel{
+        @include bgImage (300px, 120px, cover, center top);
+    }
+
+    .pictureBlock__heading{
+        width: 250px;
+    }
+
+
+    .section__heading{
+        width: 200px;
+    }
+
+}

@@ -1,0 +1,89 @@
+
+
+.footer{
+    width: 100%;
+    border-top: 2px solid $scarlet;
+    height: 260px;
+    padding: 40px 5px;
+}
+
+.footerElements{
+    margin: auto;
+    width: 940px;
+    @include flexbox (row, nowrap, space-between, flex-start);
+}
+
+.footerBlock{
+    width: 25%;
+    @include flexbox (column, nowrap, flex-start, flex-start);
+}
+.footerBlock__logo{
+    @include flexbox (column, nowrap, flex-start, flex-end);
+}
+
+.footer__dreamshare{
+    @include text ("Mont-Regular", 16px, 20px, $scarlet);
+}
+.footer__heading{
+    @include text ("Mont-Bold", 14px, 17px, $SecHeadColor);
+    margin-bottom: 10px;
+}
+.footer__info{
+    list-style: none;
+    @include text ("Roboto", 14px, 26px, $inputColor);
+}
+.logo__heading{
+    @include text ("Mont-Bold", 10px, 25px, #CCCCCC);
+    letter-spacing: 1px;
+}
+.footer__logo{
+    @include bgImage (110px, 24px, cover, center center);
+    background-image: url(../images/logo.png);
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+    
+    .footer{
+        padding: 30px 5px;
+    }
+    .footerElements{
+        width: 748px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer{
+        width: 100%;
+        border-top: 2px solid $scarlet;
+        height: 225px;
+        padding: 0px;
+        margin-bottom: 10px;
+        @include flexbox (row, nowrap, center, center);
+    }
+    .footerElements{
+        width: 280px;
+        height: 100%;
+        @include flexbox (column, nowrap, space-around, center);
+    }
+    .footerBlock{
+        width: 100%;
+        height: 22%;
+        @include flexbox (column, nowrap, center, center);
+    }
+    .footer__heading{
+        margin-bottom: 0px;
+    }
+    .footerBlock__logo{
+        @include flexbox (column, nowrap, center, center);
+    }
+    .footer__info{
+        @include flexbox (row, wrap, space-around, center);
+        width: 230px;
+    }
+    .info__item{
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,61 @@
+
+.createElements{
+    width: 490px;
+    height: 155px;
+    margin: 0 225px;
+    @include flex-col-between;
+}
+.create__text{
+    @include text ("Roboto", 18px, 18px, $SecTextColor);
+}  
+.createForm{
+    width: 100%;
+    @include flexbox (row, nowrap, space-between, center);
+}
+.create__interest{
+    border: 1px solid #D4D4D4;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+    border-radius: 3px;
+    width: 300px;
+    height: 40px;
+    padding: 5px;
+}
+.create__interest::placeholder{
+   @include text ("Roboto", 14px, 16px, $inputColor);
+}
+.create__button{
+    font-family: "Mont-Bold";
+    color: $white;
+    border: none;
+    background-color: $scarlet;
+    width: 170px;
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+    .createElements{
+        margin: 0 129px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .createElements{
+        width: 300px;
+        height: 192px;
+        margin: 0 0px;
+    }
+
+    .createForm{
+        height: 90px;
+        @include flexbox (column, nowrap, space-between, center);
+    }
+    .create__interest{
+        width: 280px;
+    }
+    .create__button{
+        width: 280px;
+    }
+}

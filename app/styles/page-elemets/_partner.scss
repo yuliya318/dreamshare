@@ -1,0 +1,110 @@
+
+
+.partners{
+    width: 100%;
+    height: 360px;
+}
+
+.partner{
+    @include flex-col-between;
+    width: 220px;
+    height: 224px;
+}
+
+.partner__avatar{
+    @include bgImage (120px, 120px, cover, center center);
+    border-radius: 120px;
+    position: relative;
+}
+.partner__avatar1{
+    background-image: url(../images/part1.png);
+}
+.partner__avatar2{
+    background-image: url(../images/part2.png);
+}
+.partner__avatar3{
+    background-image: url(../images/part3.png);
+}
+.partner__avatar4{
+    background-image: url(../images/part4.png);
+}
+
+.partner__icon{
+    position: absolute;
+    top: 86px;
+    left: 86px;
+    width: 36px;
+    height: 36px;
+    border: 4px solid white;
+    border-radius: 36px;
+    text-align: center;
+    line-height: 36px;
+}
+.icon_music{
+    background-color: $music;
+}
+.icon_art{
+    background-color: $art;
+}
+.icon_camera{
+    background-color: $camera;
+}
+.icon_plane{
+    background-color: $plane;
+}
+
+.partner__name{
+    @include text ("Mont-Bold", 14px, 17px, $SecHeadColor);
+    text-align: center;
+}
+.partner__info{
+    @include text ("Roboto", 14px, 14px, $SecTextColor);
+    text-align: center;
+}
+
+.partners__other{
+    width: 180px;
+    font-family: "Mont-Bold";
+    border: 2px solid $scarlet;
+    color: $scarlet;
+}
+
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+    .partners{
+        height: 625px;
+        padding: 0 138px;
+    }
+
+    .row-box{
+        @include flexbox (row, wrap, space-between, center);
+    }
+
+    .partner{
+        margin: 15px 0;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .partners{
+        height: 1150px;
+    }
+    .section__heading{
+        width: 250px;
+    }
+    .row-box{
+        height: 1016px;
+    }
+
+    .partners__other{
+        width: 280px;
+    }
+    .partner{
+        margin: 15px 0;
+    }
+}

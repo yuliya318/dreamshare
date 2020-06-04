@@ -1,0 +1,97 @@
+
+
+.instruction{
+    width: 100%;
+    height: 460px;
+}
+
+.step{
+    @include flexbox (column, nowrap, flex-end, flex-start);
+    @include bgImage (300px, 400px, cover, center center);
+    border-radius: 4px;
+    padding: 25px;
+    position: relative;
+    z-index: 0;
+}
+.step::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+    border-radius: 4px;
+    z-index: 1;
+}
+.step1{
+    background-image: url(../images/step1.png);
+}
+.step2{
+    background-image: url(../images/step2.png);
+}
+.step3{
+    background-image: url(../images/step3.png);
+}
+.stepElements{
+    position: relative;
+    z-index: 2;
+}
+.step__marker{
+    width: 70px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: $scarlet;
+    letter-spacing: 2px;
+    @include text ("Mont-Regular", 10px, 20px, $white);
+    text-align: center;
+}
+.step__heading{
+    @include text ("Mont-Bold", 24px, 26px, $white);
+    width: 250px;
+    margin-top: 25px;
+}
+.step__text{
+    @include text ("Roboto", 14px, 14px, $textColor);
+    width: 250px;
+    margin-top: 25px;
+}
+
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+    .step{
+        @include bgImage (236px, 400px, cover, center center);
+        padding: 20px;
+    }    
+
+    .step__heading{
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .step__text{
+        width: 200px;
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .instruction{
+        width: 300px;
+        height: 790px;
+    }   
+
+    .step{
+        @include bgImage (300px, 240px, cover, center center);
+        padding: 20px;
+    }
+
+    .row-box{
+        height: 740px;
+    }
+}
+

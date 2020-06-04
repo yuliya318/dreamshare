@@ -1,0 +1,66 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @include flex-col-start;
+}
+
+.button{
+    height: 40px;
+    border-radius: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.section{
+    @include flex-col-between;
+    width: 940px;
+    margin-bottom: 95px;
+}
+
+.section__heading{
+    @include text ("Mont-Bold", 26px, 32px, $SecHeadColor);
+    text-align: center;
+}
+
+.row-box{
+    width: 100%;
+    @include flexbox (row, nowrap, space-between, center);
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+    .section{
+        width: 748px;
+    }
+    
+    .section__heading{
+        @include text ("Mont-Bold", 22px, 27px, $SecHeadColor);
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .section{
+        width: 300px;
+        margin-bottom: 35px;
+    }
+    
+    .section__heading{
+        @include text ("Mont-Bold", 22px, 27px, $SecHeadColor);
+    }
+
+    .row-box{
+        @include flexbox (column, nowrap, space-between, center);
+    }
+    
+    
+}
